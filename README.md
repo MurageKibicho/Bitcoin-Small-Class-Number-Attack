@@ -1,17 +1,18 @@
 # Bitcoin-Small-Class-Number-Attack
 Satoshi chose an elliptic curve with a bizarre prime number. It splits *unusually* well over √-3. 
-The √-3 is special because it has primes and unique factorizations.
-Math guys would say √-3 "has a class number of 1".
 
-There are nine special square roots of imaginary numbers, called Heegner numbers, and math researchers have long speculated the existence of an attack built around these numbers.
-Trump defunded my math PhD, now I identify as an internet math autist while I figure things out. I might as well explore this attack while I'm funemployed.
+The √-3 is special because it has primes and unique factorizations and math guys would say "it has a class number of 1".
+
+There are nine special square roots of imaginary numbers, called Heegner numbers, and math researchers have speculated on the existence of an attack built around these numbers.
+
+I might as well explore this attack while I'm funemployed since Trump defunded my math PhD. 
 
 ### Different Levels of Understanding
 
 #### For Absolute Beginners (no math background, non-technical)
 We use imaginary numbers to attack imaginary internet money.
 
-#### Super Technical (moderate math background, technical)
+#### Super Technical (decent math background, technical)
 We *attempt* an attack on secp256k1's field characteristic over both of its unique factorization domains, the regular integers and the ring of Eisenstein integers.
 This is experimental mathematics and our tests involve:
 1. Index calculus to find an Eisenstein integer, somewhat similar to the fundamental solution of the Pell equation as we saw here.
@@ -21,7 +22,7 @@ This is experimental mathematics and our tests involve:
 Here's our thesis: if we f around then we shall find out. All we need are the field characteristic's logarithms to get started.
 
 ## Getting Started
-We provide a C library that runs best on CPU, not GPU. It's tes# ted on Linux. One can run locally, on Google Colab or a cloud provider like Runpod.
+We provide a C library that runs best on CPU, not GPU. It's tested on Linux. One can run locally, on Google Colab or a cloud provider like Runpod.
 
 ### Running on Google Colab
 Here's the Google Colab notebook.
@@ -30,7 +31,7 @@ Here's the Google Colab notebook.
 This library requires LibGMP, FLINT and MPFR. 
 We provide a Bash script for a fresh installation.
 
-1. Check Download.sh and ensure you're working with your desired library versions.
+1. The `Download.sh` is located in the folder `Step 0: Getting Started`. You can skip installation if you already installed FLINT 3.4.0.
 2. Clone the repo.
 ```
 git clone https://github.com/MurageKibicho/Bitcoin-Small-Class-Number-Attack.git
