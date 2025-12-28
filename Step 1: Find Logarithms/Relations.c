@@ -1381,8 +1381,9 @@ void CollectRelations()
 	FILE *out = fopen(filename, "a");
 	assert(out != NULL);
 	
-	for(int i = 0; i < 1; i++)
+	for(int i = 0; i < 10; i++)
 	{
+		totalRelationCount += 1;
 		Relation relation = CreateRelation();
 		fmpz_mul(result, result, base);
 		fmpz_mod(result, result, bitcoin->prime);
@@ -1404,7 +1405,6 @@ void CollectRelations()
 				printf("Status: Rejected\n");
 			}
 		}
-		totalRelationCount += 1;
 		DestroyRelation(relation);
 	}
 	

@@ -1,0 +1,9 @@
+# Ignore all .o file
+*.o
+
+# Ignore all .txt files
+*.txt
+
+# Track this sample file
+!Sample.txt
+
