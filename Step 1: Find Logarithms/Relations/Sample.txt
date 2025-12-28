@@ -1,0 +1,51 @@
+//Sample relation file
+
+
+fmpz_fprint(fp,relation->k);fprintf(fp,"\n");	//This is the exponent in base ^ exponent = result
+fmpz_fprint(fp,relation->rhs1);fprintf(fp,"\n");//This is the result in base ^ exponent = result
+fprintf(fp,"%d\n",relation->aSign); 		//Sign of fraction after rational reconstruction A/B
+fprintf(fp,"%d\n",relation->posVCountA);	//Count of positive V's in numerator A in V(c+dw)
+fprintf(fp,"%d\n",relation->negVCountA);	//Count of negative V's in numerator A in V(c+dw)
+fprintf(fp,"%d\n",relation->posVCountB);	//Count of positive V's in denominator B in V(c+dw)
+fprintf(fp,"%d\n",relation->negVCountB);	//Count of negative V's in denominator B in V(c+dw)
+fprintf(fp,"%d\n",relation->bestInt);   	//Largest regular integer size in bits
+fprintf(fp,"%d\n",relation->bestComplex);	//Largest eisenstein integer size in bits
+fprintf(fp,"%ld\n",relation->aNum->num);	//Number of regular integers to expect in A
+for(slong i = 0; i < relation->aNum->num; i++)  //Print regular integers
+{
+	fmpz_fprint(fp,&relation->aNum->p[i]);fprintf(fp,"\n");
+	fprintf(fp,"%ld\n",relation->aNum->exp[i]);
+}
+fprintf(fp,"%ld\n",relation->aDen->num);
+for(slong i = 0; i < relation->aDen->num; i++)
+{
+	fmpz_fprint(fp,&relation->aDen->p[i]);fprintf(fp,"\n");
+	fprintf(fp,"%ld\n",relation->aDen->exp[i]);
+}
+fprintf(fp,"%ld\n",relation->bNum->num);
+for(slong i = 0; i < relation->bNum->num; i++)
+{
+	fmpz_fprint(fp,&relation->bNum->p[i]);fprintf(fp,"\n");
+	fprintf(fp,"%ld\n",relation->bNum->exp[i]);
+}
+fprintf(fp,"%ld\n",relation->bDen->num);
+for(slong i = 0; i < relation->bDen->num; i++)
+{
+	fmpz_fprint(fp,&relation->bDen->p[i]);fprintf(fp,"\n");
+	fprintf(fp,"%ld\n",relation->bDen->exp[i]);
+}
+fprintf(fp,"%ld\n",arrlen(relation->aEis));
+for(size_t i = 0; i < arrlen(relation->aEis); i++)
+{
+	fmpz_fprint(fp,relation->aEis[i]->a);fprintf(fp,",");fmpz_fprint(fp,relation->aEis[i]->b);fprintf(fp,"\n");
+	fprintf(fp,"%d\n",relation->aEis[i]->exponent);
+}
+fprintf(fp,"%ld\n",arrlen(relation->bEis));
+for(size_t i = 0; i < arrlen(relation->bEis); i++)
+{
+	fmpz_fprint(fp,relation->bEis[i]->a);fprintf(fp,",");fmpz_fprint(fp,relation->bEis[i]->b);fprintf(fp,"\n");
+	fprintf(fp,"%d\n",relation->bEis[i]->exponent);
+}
+fprintf(fp,"\n");		
+
+
