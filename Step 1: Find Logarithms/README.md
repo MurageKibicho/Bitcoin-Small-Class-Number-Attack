@@ -1,6 +1,5 @@
 # Step 1: Collect Logarithms
 
-I tried using CADO-NFS but it doesn't work for this prime number DLP.
 
 So we must roll our own relation collector for the index calculus step.
 
@@ -11,3 +10,5 @@ I go through the code and the math in this LeetArxiv paper on Gaussian and Eisen
 Here's my reading list if you're an absolute beginner.
 
 1. The Ds
+
+I tried using CADO-NFS but it doesn't work for this prime number DLP. Could be a skill issue on my end.
