@@ -4,9 +4,9 @@ The √-3 is special because it has primes and unique factorizations.
 Math guys would say √-3 "has a class number of 1".
 
 There are nine special square roots of imaginary numbers, called Heegner numbers, and math researchers have long speculated the existence of an attack built around these numbers.
-Trump defunded my math PhD, now I identify as an internet math autist while I figure things out. I might as well explote this attack while I'm funemployed.
+Trump defunded my math PhD, now I identify as an internet math autist while I figure things out. I might as well explore this attack while I'm funemployed.
 
-### Different Levels of Understanding Explanation
+### Different Levels of Understanding
 
 #### For Absolute Beginners (no math background, non-technical)
 We use imaginary numbers to attack imaginary internet money.
@@ -23,21 +23,42 @@ Here's our thesis: if we f around then we shall find out. All we need are the fi
 ## Getting Started
 We provide a C library that runs best on CPU, not GPU. It's tes# ted on Linux. One can run locally, on Google Colab or a cloud provider like Runpod.
 
-### Running Locally
+### Running on Google Colab
+Here's the Google Colab notebook.
+
+### Running Locally or on Runpod
 This library requires LibGMP, FLINT and MPFR. 
-We provide a Linux Bash script for a fresh installation.
+We provide a Bash script for a fresh installation.
 
-### Runpod Tutorial
+1. Check Download.sh and ensure you're working with your desired library versions.
+2. Clone the repo.
+```
+git clone https://github.com/MurageKibicho/Bitcoin-Small-Class-Number-Attack.git
+```
+3.  cd into the folder.
+```
+cd 'Step 0: Getting Started'
+```
 
-First install m4 
+4. Ensure m4 is available
 ```
 sudo apt-get update
 sudo apt-get install -y m4
 ```
 
-Then follow the 
+5. Make Download.sh executable, and run Download.sh
+```
+chmod +x Download.sh
 
-### Running on Googe Colab
+./Download.sh
+```
+
+6. Run sample program
+I installed Flint in home. Modify this command to match your build
+
+```
+clear && gcc main.c -o m.o   -I/home/Bitcoin-Small-Class-Number-Attack/build/local/include   -L/home/Bitcoin-Small-Class-Number-Attack/build/local/lib   -lflint -lmpfr -lgmp -lm   -Wl,-rpath,/home/Bitcoin-Small-Class-Number-Attack/build/local/lib   && ./m.o
+```
 
 
 
