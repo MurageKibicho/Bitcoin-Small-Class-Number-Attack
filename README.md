@@ -55,6 +55,7 @@ chmod +x Download.sh
 ```
 
 6. Run sample program
+   
 I installed Flint in home. Modify this command to match your build
 
 ```
