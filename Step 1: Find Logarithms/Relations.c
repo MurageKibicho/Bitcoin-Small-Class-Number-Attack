@@ -1375,20 +1375,19 @@ void CollectRelations()
 	char *outputDirectory = "Relations";
 	time_t now = time(NULL);struct tm *tm_now = localtime(&now);
 	char timebuf[64];strftime(timebuf, sizeof(timebuf), "%Y%m%d_%H%M%S", tm_now);
-	char kOffsetStr[256];fmpz_get_str(kOffsetStr, 10, exponent);
-	char filename[512];
+	char filename[512];char kOffsetStr[256];fmpz_get_str(kOffsetStr, 10, exponent);
 	snprintf(filename, sizeof(filename),"%s/%s_%s.txt",outputDirectory,timebuf,kOffsetStr);
 	FILE *out = fopen(filename, "a");
 	assert(out != NULL);
 	
-	for(int i = 0; i < 10; i++)
+	for(int i = 0; i < 20; i++)
 	{
 		totalRelationCount += 1;
 		Relation relation = CreateRelation();
 		fmpz_mul(result, result, base);
 		fmpz_mod(result, result, bitcoin->prime);
 		
-		fmpz_add_ui(relation->k, exponent, i);
+		fmpz_add_ui(relation->k, exponent, i+1);
 		fmpz_set(relation->rhs1, result);
 		ProcessRelation(bitcoin, relation, temp0, factorNum, factorDen, rationalReconstruction);
 		if(relation->reconstructionSuccess && relation->validRelation == true)
